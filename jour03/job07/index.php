@@ -7,8 +7,15 @@
     </head>
     <body>
         <?php
+            function strlen_copycat($input_string) {
+                $i = 0;
+                while (isset($input_string[$i])) {
+                    ++$i;
+                }
+                return $i;
+            }
             $matrix = "Certaines choses changent, et d'autres ne changeront jamais.";
-            $length = count(str_split($matrix));
+            $length = strlen_copycat($matrix);
 
             // Remercions la magie du modulo
             for ($i = 0; $i < $length; ++$i)

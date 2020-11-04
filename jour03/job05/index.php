@@ -7,6 +7,10 @@
         <title>Jour03: job 05</title>
     </head>
     <body>
-        
+        <?php
+            $str = "On n est pas le meilleur quand on le croit mais quand on le sait"
+
+
+        ?>
     </body>
 </html>

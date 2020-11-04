@@ -7,12 +7,16 @@
     </head>
     <body>
         <?php
-            $alien = "Dans l'espace, personne ne vous entend crier";
-            $i = 0;
-            while (isset($alien[$i])) {
-                ++$i;
+            function strlen_copycat($input_string) {
+                $i = 0;
+                while (isset($input_string[$i])) {
+                    ++$i;
+                }
+                return $i;
             }
-            echo $i;
+
+            $alien = "Dans l'espace, personne ne vous entend crier";
+            echo strlen_copycat($alien);
         ?>
     </body>
 </html>
