@@ -12,8 +12,22 @@
         echo $str_len . "<br />";
 
         for ($i = 0; $i < $str_len; ++$i) {
-            if (($hal[$i] >= "a" && $hal[$i] <= "z") && ($hal[$i] >= "A" && $hal[$i] <= "Z"))
-                echo $hal[$i];
+            switch($hal[$i]) {
+                case "a":
+                case "e":
+                case "i":
+                case "o":
+                case "u":
+                case "A":
+                case "E":
+                case "I":
+                case "O":
+                case "U":
+                    echo $hal[$i];
+                    break;
+                default:
+                break;
+            }
         }
     ?>
     
