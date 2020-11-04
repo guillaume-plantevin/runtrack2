@@ -6,6 +6,16 @@
     <title>Jour03: job 07</title>
 </head>
 <body>
+    <?php
+        $matrix = "Certaines choses changent, et d'autres ne changeront jamais.";
+
+        $length = strlen($matrix);
+
+        // Remercions la magie du modulo
+        for ($i = 0; $i < $length; ++$i) {
+            echo $matrix[($i + 1) % $length];
+        }
+    ?>
     
 </body>
 </html>
