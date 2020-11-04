@@ -6,6 +6,19 @@
     <title>Jour03: job 01</title>
 </head>
 <body>
+    <?php
+        $tab = array(200, 204, 173, 98, 171, 404, 459);
+        $tab_size = count($tab);
+
+        // echo $tab[0] . "<br/ >";
+        for ($i = 0; $i < $tab_size; $i++)
+        {
+            if ($tab[$i] % 2 == 0)
+                echo $tab[$i] . " est pair<br />";
+            else
+             echo $tab[$i] . " est impair<br />";
+        }
+    ?>
     
 </body>
 </html>
