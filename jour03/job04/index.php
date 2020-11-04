@@ -6,6 +6,15 @@
     <title>Jour03: job 04</title>
 </head>
 <body>
+    <?php
+        $alien = "Dans l'espace, personne ne vous entend crier" . "\0";
+        $i = 0;
+        while ($alien[$i] != NULL) {
+            echo $alien[$i] . "<br />";
+            ++$i;
+        }
+
+    ?>
     
 </body>
 </html>
