@@ -64,6 +64,7 @@
                     echo '<br>';
                 }
             }
+            // changer le $width en nombre pair uniquement
             $width = 30;
             $height = $width / 2;
             drawHouse($width, $height);
