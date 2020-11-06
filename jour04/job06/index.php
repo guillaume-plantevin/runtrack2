@@ -8,7 +8,7 @@
     <body>
         <form action = "" method = "get">
                 <label for="nombre">Nombre:</label>
-                <input type="number" name="nombre" id="nombre">
+                <input type="text" name="nombre" id="nombre">
                 <input type = "submit" name="validate" value = "Envoyer">     
             </form>
 

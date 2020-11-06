@@ -6,6 +6,11 @@
         <title>jour04: job07</title>
     </head>
     <body>
+        <form action = "" method = "get">
+                <label for="nombre">Nombre:</label>
+                <input type="number" name="nombre" id="nombre">
+                <input type = "submit" name="validate" value = "Envoyer">     
+        </form>
         <?php
             function drawHouse($width, $height) {
                 // vertical
