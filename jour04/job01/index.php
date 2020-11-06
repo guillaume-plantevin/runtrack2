@@ -7,7 +7,6 @@
     </head>
     <body>
         <form action = "" method = "get">
-        <!-- <form action = "" method = "post"> -->
             prenom: <br />
             <input type = "text" name = "firstname" value = "Jean">
             <br /><br />
