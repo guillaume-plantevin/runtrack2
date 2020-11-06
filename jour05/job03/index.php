@@ -6,6 +6,14 @@
     <title>jour05: job03</title>
 </head>
 <body>
+    <?php
+        function gethello() {
+            return "Hello LaPlateforme!";
+        }
+        $str = gethello();
+
+        echo $str;
+    ?>
     
 </body>
 </html>

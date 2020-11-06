@@ -6,6 +6,36 @@
     <title>jour05: job04</title>
 </head>
 <body>
+    <?php
+        function calcule($a, $operation, $b) {
+
+            switch ($operation) {
+                case '+':
+                    return ($a + $b);
+                    break;
+                case '-':
+                    return ($a - $b);
+                    break;
+                case '*':
+                    return ($a * $b);
+                    break;
+                case '*':
+                    return ($a * $b);
+                    break;
+                case '%':
+                    return ($a % $b);
+                    break;
+                default:
+                    echo "ERREUR: operation invalide";
+                    break;
+            }
+        }
+        $a = 12;
+        $b = 30;
+        $c = calcule($a, '+', $b);
+        echo $c;
+
+    ?>
     
 </body>
 </html>

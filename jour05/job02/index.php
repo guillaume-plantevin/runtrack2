@@ -6,6 +6,20 @@
     <title>jour05: job02</title>
 </head>
 <body>
+    <?php
+        function bonjour($jour) {
+            if ($jour)
+                echo "Bonjour";
+            else
+                echo "Bonsoir";
+            return 0;
+        }
+
+        $bool = false;
+        // $bool = true;
+
+        bonjour($bool);
+    ?>
     
 </body>
 </html>
