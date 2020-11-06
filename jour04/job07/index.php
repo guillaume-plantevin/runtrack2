@@ -7,9 +7,11 @@
     </head>
     <body>
         <form action = "" method = "get">
-                <label for="nombre">Nombre:</label>
-                <input type="number" name="nombre" id="nombre">
-                <input type = "submit" name="validate" value = "Envoyer">     
+            <label for="width">Largeur:</label>
+            <input type="text" name="width" id="width">
+            <label for="height">hauteur:</label>
+            <input type="text" name="height" id="height">
+            <input type = "submit" name="validate" value = "Envoyer">     
         </form>
         <?php
             function drawHouse($width, $height) {
@@ -69,10 +71,17 @@
                     echo '<br>';
                 }
             }
-            // changer le $width en nombre pair uniquement
-            $width = 30;
-            $height = $width / 2;
-            drawHouse($width, $height);
+            if (isset($_GET['validate'])) {
+                if ($_GET['width'] % 2 != 0 ) 
+                    echo "Vous devez entrer un nombre pair pour la largeur.";
+                else if ($_GET['height'] != $_GET['width'] / 2 ) 
+                    echo "Vous devez entrer une hauteur égale à la largeur divisée par 2.";
+                else {
+                    $width = $_GET['width'];
+                    $height = $_GET['height'];
+                    drawHouse($width, $height);
+                }
+            }
         ?>    
     </body>
 </html>
