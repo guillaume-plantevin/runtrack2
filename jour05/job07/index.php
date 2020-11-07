@@ -4,51 +4,104 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>jour05: job07</title>
+    <style>
+        label {
+            display: inline-block;
+            width: 200px;
+            margin-top: 30px;
+        }
+        input {
+            background: pink;
+        }
+    </style>
 </head>
 <body>
-    <!-- 
-        Créez un formulaire qui contient un input nommé “str” de type text, 
-        une liste déroulante (select) nommée “fonction” et un bouton submit. 
-        Lorsque vous validez le formulaire, vous devez appliquer des transformations à “str” 
-        en fonction de l’option choisie dans la liste déroulante. Les choix possibles sont :
-        -   “gras” : une fonction qui prend en paramètre “str”. 
-            Elle écrit “str” en mettant en gras (<b>) les mots commençant par une lettre majuscule.
-        -   “cesar” : une fonction qui prend en paramètre “str” et un nombre “decalage” 
-            (qui vaut 2 par défaut). La chaine est affichée en décalant chaque caractère 
-            d’un nombre égal à “decalage”.
-            ex : si decalage vaut 1, e devient f. Si décalage vaut 3, z devient c.
-        -   “plateforme”, une fonction qui prend en paramètre “str”. Elle écrit “str” en ajoutant un “_” aux mots finissant par “me”. 
-    -->
+    <form action="" method="GET">
+        <label for="input_str">str:</label>
+        <input type="text" name="str" id="str"><br>
 
-    <form action = "" method = "get">
-        Ecrivez votre message: <br />
-        <input type = "text" name = "txt" value = "Jean">
-        <br /><br />
-        Nom: <br />
-        <input type = "text" name = "lastname" value = "Dupont">
-        <br /><br />
-        Sujet favori<br />          
-        <input type = "checkbox" name = "suj" value = "ALGO">Algorithme
-        <input type = "checkbox" name = "suj" value = "HTML">HTML
-        <input type = "checkbox" name = "suj" value = "CSS">CSS
-        <input type = "checkbox" name = "suj" value = "PHP">PHP
-        <br /><br />
-        Sexe: <br />
-        <input type = "radio" name = "gender" value = "M">Homme
-        <input type = "radio" name = "gender" value = "F">Femme
-        <br /><br />
-        <input type = "submit" name="sm" value = "Envoyer">     
+        <label for="fonction">Fonction choisie:</label>
+        <select name=fonction id="fonction">
+            <option name="fonction" value="gras">gras</option>
+            <option name="fonction" value="caesar">cesar</option>
+            <option name="fonction" value="plateforme">plateforme</option>
+        </select>
+
+        <br />
+        <input type="submit" name="submit" value="envoyer">     
     </form>
-
-
-    <form action="" method=""></form>
-
     <?php
-        $input = 's';
-        $sec = (int)$input;
-        echo $sec;
+        // strlen2, le retour de la copy
+        function strlen2($input_string) {
+            $i = 0;
+            while (isset($input_string[$i])) {
+                ++$i;
+            }
+            return $i;
+        }
+        // protoype fonction gras2
+        function gras2($str) {
+            $start = "<b>";
+            $end = "</b>";
+            return $start . $str . $end;
+        }
+        // fonction gras
+        function gras($str) {
+            $dic = [
+                'lower' => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
+                'upper' => ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+                'ponct' => [' ', ',', '.', '?', '!', ':', ';', '(', ')', '\<', '\>']
+            ];
+            $st_gras = "<b>";
+            $end_gras = "</b>";
+            $str_copy = $str;
+            $insideW = true;
+
+            for ($i = 0; isset($str[$i]); ++$i) {
+                // echo $str[$i] . "<br>";
+                if (in_array($str[$i], $dic['ponct'])) {
+                    $insideW = false;
+                    $str[$i] = '&nbsp';
+                    echo $str[$i] . ': inside ponct<br>';
+                }
+                else if (in_array($str[$i], $dic['upper'])) {
+                    echo $str[$i] . ": je suis une majuscule<br>";
+                }
+
+                else
+                   echo $str[$i] . "<br>";
+
+                // if (in_array($str[$i], $maj) && $insideW)  {
+                //     while (!in_array($str[$i], $ponct))
+
+
+                    
+                    
+                //     echo $str[$i] . ': je suis une majuscule<br>';
+                // }
+                // else
+                //     $str_copy[$i] = $str[$i]
+               
+            }
+            echo $str;
+        }
+        // fonction caesar
+
+
+
+        if (isset($_GET['submit'])) {
+            print_r ($_GET);
+            echo "<br /> Output: <br />";
+
+            if ($_GET['fonction'] =='gras')
+                echo gras2($_GET['str']);
+            // else if ($_POST['fonction'] =='caesar')
+            //     echo "<br /> fonction cesar";
+            // else if ($_POST['fonction'] =='plateforme')
+            //     echo "<br /> fonction plateforme";
+        }
+        
 
     ?>
-    
 </body>
 </html>
