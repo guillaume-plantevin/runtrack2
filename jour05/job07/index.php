@@ -23,7 +23,7 @@
         <label for="fonction">Fonction choisie:</label>
         <select name=fonction id="fonction">
             <option name="fonction" value="gras">gras</option>
-            <option name="fonction" value="caesar">cesar</option>
+            <option name="fonction" value="cesar">cesar</option>
             <option name="fonction" value="plateforme">plateforme</option>
         </select>
 
@@ -55,21 +55,24 @@
             $st_gras = "<b>";
             $end_gras = "</b>";
             $str_copy = $str;
-            $insideW = true;
+            // $insideW = true;
 
             for ($i = 0; isset($str[$i]); ++$i) {
                 // echo $str[$i] . "<br>";
+                if (in_array($str[$i], $dic['upper'])) {
+                    // echo $str[$i] . ": je suis une majuscule<br>";
+
+                }
                 if (in_array($str[$i], $dic['ponct'])) {
-                    $insideW = false;
-                    $str[$i] = '&nbsp';
+                    // $insideW = false;
+                    // $str[$i] = '&nbsp';
                     echo $str[$i] . ': inside ponct<br>';
                 }
-                else if (in_array($str[$i], $dic['upper'])) {
-                    echo $str[$i] . ": je suis une majuscule<br>";
-                }
 
-                else
-                   echo $str[$i] . "<br>";
+                else {
+
+                }
+                //    echo $str[$i] . "<br>";
 
                 // if (in_array($str[$i], $maj) && $insideW)  {
                 //     while (!in_array($str[$i], $ponct))
@@ -95,7 +98,7 @@
 
             if ($_GET['fonction'] =='gras')
                 echo gras2($_GET['str']);
-            // else if ($_POST['fonction'] =='caesar')
+            // else if ($_POST['fonction'] =='cesar')
             //     echo "<br /> fonction cesar";
             // else if ($_POST['fonction'] =='plateforme')
             //     echo "<br /> fonction plateforme";
