@@ -41,9 +41,41 @@
         }
         // protoype fonction gras2
         function gras2($str) {
-            $start = "<b>";
-            $end = "</b>";
-            return $start . $str . $end;
+            $dic = [
+                'lower' => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
+                'upper' => ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+                'ponct' => [' ', ',', '.', '?', '!', ':', ';', '(', ')', '\<', '\>']
+            ];
+            $st_gras = "<b>";
+            $end_gras = "</b>";
+            $copy = $str;
+
+            for ($i = 0; isset($str[$i]); ++$i) {
+                // echo $str[$i] . "<br>";
+                // if (in_array($str[$i], $dic['ponct'])) {
+                //     $str[$i] = '&nbsp';
+                //     echo $str[$i] . ': inside ponct<br>';
+                // }
+                if (in_array($str[$i], $dic['upper'])) {
+                    while ()
+                }
+
+                else
+                   echo $str[$i] . "<br>";
+
+                // if (in_array($str[$i], $maj) && $insideW)  {
+                //     while (!in_array($str[$i], $ponct))
+
+
+                    
+                    
+                //     echo $str[$i] . ': je suis une majuscule<br>';
+                // }
+                // else
+                //     $str_copy[$i] = $str[$i]
+               
+            }
+            
         }
         // fonction gras
         function gras($str) {
