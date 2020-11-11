@@ -1,0 +1,21 @@
+body {
+    margin: 5% 20%;
+}
+label {
+    display: inline-block;
+    width: 13%;
+    margin-bottom: 1.3em;
+}
+#send {
+    margin: 2em auto;
+}
+table, th, td {
+    border: 2px solid black;
+    font-size: 1.3em;
+}
+table {
+    border-collapse: collapse;
+}
+th, td {
+    padding: .5em 1em;
+}

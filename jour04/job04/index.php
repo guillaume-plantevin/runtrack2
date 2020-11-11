@@ -6,25 +6,23 @@
         <title>jour04: job04</title>
     </head>
     <body>
-        <form action = "" method = "post">
-                prenom: <br />
-                <input type = "text" name = "prenom" value = "Jean">
-                <br /><br />
-                Nom: <br />
-                <input type = "text" name = "nom" value = "Dupont">
-                <br /><br />
-                Sujet favori:<br />          
-                <input type = "radio" name = "suj" value = "ALGO">Algorithme
-                <input type = "radio" name = "suj" value = "HTML">HTML
-                <input type = "radio" name = "suj" value = "CSS">CSS
-                <input type = "radio" name = "suj" value = "PHP">PHP
-                <br /><br />
-                Sexe: <br />
-                <input type = "radio" name = "gender" value = "M">Homme
-                <input type = "radio" name = "gender" value = "F">Femme
-                <br /><br />
-                <input type = "submit" name="valider" value = "Envoyer">     
-            </form>
+        <form action="" method="post">
+            <label for="prenom">Prenom:</label>
+            <input type="text" name="prenom" placeholder="Jean"><br />
+
+            <label for="nom">Nom:</label>
+            <input type="text" name="nom" placeholder="Dupont"><br />
+            
+            <label for="mail">Email:</label>
+            <input type="email" name="mail" id="mail"><br />
+
+            <label for="sexe">Sexe:</label><br />
+            <input type="radio" name="sexe" value="homme">Homme
+            <input type="radio" name="sexe" value="femme">Femme
+            <br />
+
+            <input type="submit" name="valider" id="send" value="Envoyer">     
+        </form>
 
             <?php
             if (isset($_POST['valider'])) {
@@ -39,6 +37,5 @@
                 echo "</table>";
             }
             ?>
-        
     </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>job 02</title>
+    <title>Jour02: job02</title>
 </head>
 <body>
     <?php

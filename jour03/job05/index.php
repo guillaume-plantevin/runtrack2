@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Jour03: job 05</title>
+        <title>Jour03: job05</title>
     </head>
     <body>
         <?php
@@ -31,12 +31,9 @@
                 if (in_array($str[$i], $dic["voyelles"]))
                     ++$vow;
             }
-
-            echo "<table>";
-            echo "<tr><th>Consonnes</th><th>Voyelles</th></tr>";
+            echo "<table><tr><th>Consonnes</th><th>Voyelles</th></tr>";
             echo "<tr><td>" . $cons . "</td>";
-            echo "<td>" . $vow . "</td></tr>";
-            echo "</table>";
+            echo "<td>" . $vow . "</td></tr></table>";
         ?>  
     </body>
 </html>
