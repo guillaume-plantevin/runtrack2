@@ -2,10 +2,10 @@
 -- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : mar. 10 nov. 2020 à 15:21
--- Version du serveur :  10.4.14-MariaDB
--- Version de PHP : 7.4.11
+-- Host: localhost
+-- Generation Time: Nov 12, 2020 at 08:37 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,26 +18,26 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `jour08`
+-- Database: `jour08`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `etage`
+-- Table structure for table `etage`
 --
 
 CREATE TABLE `etage` (
   `id` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `numero` int(11) NOT NULL,
-  `suferficie` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `superficie` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `etudiants`
+-- Table structure for table `etudiants`
 --
 
 CREATE TABLE `etudiants` (
@@ -45,14 +45,14 @@ CREATE TABLE `etudiants` (
   `prenom` varchar(255) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `naissance` date NOT NULL,
-  `sexe` varchar(25) NOT NULL,
+  `sexe` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `salles`
+-- Table structure for table `salles`
 --
 
 CREATE TABLE `salles` (
@@ -60,48 +60,48 @@ CREATE TABLE `salles` (
   `nom` varchar(255) NOT NULL,
   `id_etage` int(11) NOT NULL,
   `capacite` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `etage`
+-- Indexes for table `etage`
 --
 ALTER TABLE `etage`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `etudiants`
+-- Indexes for table `etudiants`
 --
 ALTER TABLE `etudiants`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `salles`
+-- Indexes for table `salles`
 --
 ALTER TABLE `salles`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `etage`
+-- AUTO_INCREMENT for table `etage`
 --
 ALTER TABLE `etage`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `etudiants`
+-- AUTO_INCREMENT for table `etudiants`
 --
 ALTER TABLE `etudiants`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `salles`
+-- AUTO_INCREMENT for table `salles`
 --
 ALTER TABLE `salles`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
