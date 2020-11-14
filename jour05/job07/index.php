@@ -45,51 +45,36 @@
             <input type="submit" id="submitbutton" name="submit" value="envoyer">     
         </form>
         <?php
-            // les fonctions doivent altérer l'input $str
-            
-            // Declararion des variables
+            // Declararion de la variable decalage pour cesar
             $decalage = 2;
-
-            // strlen2, le retour de la copy
-            // a virer si non utiliser
-            function strlen2($input_string) {
-                $i = 0;
-                while (isset($input_string[$i])) {
-                    ++$i;
-                }
-                return $i;
-            }
-            // fonction gras
-            function plateforme($str) {
+            
+            // Utilisation d'un pointeur pour alterer l'input $str, peut-etre pas indispensable
+            function gras($str) {
                 $dic = [
                     'lower' => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
                     'upper' => ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
                     'ponct' => [' ', ',', '.', '?', '!', ':', ';', '(', ')', '\<', '\>']
                 ];
-                $bold = ["<b>", "</b>"];
-                $st_gras = "<b>";
-                $end_gras = "</b>";
-                $strArray = explode(' ', $str);
-                // foreach 
-                // print_r($strArray);
-                echo '<br/>';
-                // rien ne marche...
-                // foreach($strArray as $value) {
-                    // if (in_array($value[0], $dic['upper'])) {
-                        // $value = $bold[0] . $value . $bold[1];
-                        // echo 'ça marche<br>';
-                        // $strArray[$value] = "change";
-                        // str_replace($value, "<b>", $value);
-                    // }
-                // }
-                $value = str_replace('me', 'me_', $strArray);
-                // print_r($strArray);
+                $array = explode(' ', $str);
 
-                $str = implode(' ', $strArray);
+                foreach ($array as &$value) {
+
+                    if (in_array($value[0], $dic['upper'])) {
+                        $value = '<b>' . $value;
+
+                        if (in_array($value[strlen($value) - 1], $dic['ponct'])) {
+                            $lastChar = $value[strlen($value) -1];
+                            $value = substr_replace($value, '</b>', -1, 4);
+                            $value .= $lastChar;
+                        }
+                        else
+                            $value .= '</b>';
+                    }
+                }
+                $str = implode(' ', $array);
                 return $str;
-
             }
-            // fonction cesar
+
             function cesar($str, $decalage) {
                 for ($i = 0; isset($str[$i]); ++$i) {
                     $var = ord($str[$i]);
@@ -108,11 +93,22 @@
                 }
                 return $str;
             }
+            function plateforme(&$str) {
+                $dic = [
+                    'lower' => ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
+                    'upper' => ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
+                    'ponct' => [' ', ',', '.', '?', '!', ':', ';', '(', ')', '\<', '\>']
+                ];
+                for ($i = 0; isset($str[$i]); ++$i) {
+                    if (in_array($str[$i], $dic['ponct'])) {
+                        if ($str[$i - 1]  == 'e' && $str[$i - 2] == 'm')
+                            $str = substr_replace($str, '_', $i, 0);
+                    }
+                }
+                return $str;
+            }
 
             if (isset($_GET['submit'])) {
-                // print_r ($_GET);
-                // echo "<p>En sortie: ";
-
                 if ($_GET['fonction'] == 'gras')
                     echo gras($_GET['str']);
                 else if ($_GET['fonction'] == 'cesar')
