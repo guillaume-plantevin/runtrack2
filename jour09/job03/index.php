@@ -39,8 +39,8 @@
         <table>
             <thead>
                 <tr>
+                    <th>prenom</th>
                     <th>nom</th>
-                    <th>capacite</th>
                     <th>naissance</th>
                 </tr>
             </thead>
