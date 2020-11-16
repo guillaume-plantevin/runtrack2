@@ -9,6 +9,7 @@
         setcookie('nbvisites', '');
 ?>
 <!DOCTYPE html>
+
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
@@ -16,8 +17,6 @@
         <title>jour07: job02</title>
     </head>
     <body>
-        <?php
-        ?>
         <p>Nombre de visites: <?php echo $nbvisites;?>
         </p>
         <form action="index.php" method="post">
