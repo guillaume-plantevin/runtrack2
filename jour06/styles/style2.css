@@ -1,0 +1,59 @@
+/* menu, restaurant */
+:root {
+    --gradient: linear-gradient(45deg, rgba(255,211,0,1) 0%, rgba(233,76,240,1) 38%, rgba(255,0,85,1) 76%, rgba(247,255,0,1) 100%); 
+}
+@font-face {
+    font-family: 'hippie';
+    src: url('../fonts/Organic\ Brand.ttf');
+}
+
+body {
+    line-height: 1.3;
+    margin: 0 1em; 
+    background-image: var(--gradient);
+    background-size: 500%;
+    animation: bg-animation 30000ms infinite alternate;
+}
+@keyframes bg-animation{
+    0% {background-position: bottom left;}
+    50% {background-position: right}
+    100% {background-position: left;}
+}
+header, h2 {
+    color: rgba(0, 0, 0, 0.925);
+    font-family: 'hippie';
+    font-size: 3em;
+    text-shadow: 2px 2px 1px white;
+}
+.choice {
+    margin-left: 1em;
+    font-size: 1.1em;
+    font-family: 'hippie';
+}
+hr {
+    display: none;
+}
+p, label {
+    font-family: sans-serif;
+    font-size: 1.7em;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+select {
+    font-size: 1.2em;
+    font-family: sans-serif;
+}
+input {
+    font-size: 1.5em;
+}
+input, select {
+    margin-top: 1.5em;
+    padding: .5em 0;
+}
+input:hover {
+    background-color: rgba(255, 0, 136, 0.151);
+    outline: pink solid 2px;
+}
